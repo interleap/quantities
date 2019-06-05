@@ -1,5 +1,5 @@
 package com.example.quantities;
 
 public enum Unit {
-    GRAM
+    GRAM, KILOGRAM
 }
