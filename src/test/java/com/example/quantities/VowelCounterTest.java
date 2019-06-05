@@ -13,4 +13,9 @@ public class VowelCounterTest {
     @Test public void shouldCountCorrectlyInAMultipleVowelString(){
         assertEquals(7, new VowelCounter().count("iioueaa"));
     }
+
+    @Test
+    public void shouldCountVowelsCorrectlyInAStringWithBothVowelsAndConsonants(){
+        assertEquals(3, new VowelCounter().count("helloozz"));
+    }
 }
