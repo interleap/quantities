@@ -1,4 +1,4 @@
-package com.example.dummy;
+package com.example.quantities;
 
 import org.junit.Test;
 
