@@ -1,8 +1,0 @@
-package com.example.quantities;
-
-import org.junit.Test;
-
-public class DummyTest {
-    @Test
-    public void dummy(){}
-}
