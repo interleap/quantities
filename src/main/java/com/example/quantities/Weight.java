@@ -1,7 +1,5 @@
 package com.example.quantities;
 
-import java.util.Objects;
-
 import static java.lang.Math.abs;
 
 public class Weight {
@@ -26,7 +24,7 @@ public class Weight {
     }
 
     private double valueInBaseUnit() {
-        return value * unit.scale;
+        return unit.toBaseUnit(this.value);
     }
 
     private boolean areValuesEqualToThousandthUnit(double firstValue, double secondValue) {

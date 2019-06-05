@@ -7,4 +7,8 @@ public enum Unit {
     Unit(int scale) {
         this.scale = scale;
     }
+
+    double toBaseUnit(double value) {
+        return value * scale;
+    }
 }
