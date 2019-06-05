@@ -2,11 +2,13 @@ package com.example.quantities;
 
 import java.util.Objects;
 
+import static java.lang.Math.abs;
+
 public class Weight {
-    private final int value;
+    private final double value;
     private final Unit unit;
 
-    public Weight(int value, Unit unit) {
+    public Weight(double value, Unit unit) {
         this.value = value;
         this.unit = unit;
     }
@@ -16,16 +18,31 @@ public class Weight {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Weight weight = (Weight) o;
-        return value == weight.value &&
-                unit == weight.unit;
+    public boolean equals(Object other) {
+        if (this == other) return true;
+        if (other == null || getClass() != other.getClass()) return false;
+        Weight weight = (Weight) other;
+        return areValuesEqualToThousandthUnit(valueInBaseUnit(), weight.valueInBaseUnit());
+    }
+
+    private double valueInBaseUnit() {
+        return value * unit.scale;
+    }
+
+    private boolean areValuesEqualToThousandthUnit(double firstValue, double secondValue) {
+        return abs(firstValue - secondValue) < .001;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(value, unit);
+        return (int)(valueInBaseUnit());
+    }
+
+    @Override
+    public String toString() {
+        return "Weight{" +
+                "value=" + value +
+                ", unit=" + unit +
+                '}';
     }
 }
