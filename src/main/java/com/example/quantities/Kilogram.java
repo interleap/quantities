@@ -10,7 +10,7 @@ public class Kilogram {
     }
 
     public Kilogram add(Kilogram another) {
-        return new Kilogram(8);
+        return new Kilogram(value + another.value);
     }
 
     @Override

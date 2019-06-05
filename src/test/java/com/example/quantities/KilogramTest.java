@@ -6,10 +6,14 @@ import static org.junit.Assert.assertEquals;
 
 public class KilogramTest {
     @Test
-    public void shouldaddTwoKilogramObjects(){
+    public void shouldAddTwoKilogramObjects(){
         Kilogram kilogram = new Kilogram(5);
-        Kilogram another = new Kilogram(3);
+        assertEquals(new Kilogram(8), kilogram.add(new Kilogram(3)));
+    }
 
-        assertEquals(new Kilogram(8), kilogram.add(another));
+    @Test
+    public void shouldAddTwoDifferentKilogramObjects(){
+        Kilogram kilogram = new Kilogram(2);
+        assertEquals(new Kilogram(3), kilogram.add(new Kilogram(1)));
     }
 }
