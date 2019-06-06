@@ -11,4 +11,8 @@ public enum Unit {
     double toBaseUnit(double value) {
         return value * scale;
     }
+
+    public double fromBaseUnit(double valueInBaseUnit) {
+        return valueInBaseUnit/scale;
+    }
 }

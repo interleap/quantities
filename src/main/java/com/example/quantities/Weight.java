@@ -12,7 +12,9 @@ public class Weight {
     }
 
     public Weight add(Weight another) {
-        return new Weight(value + another.value, unit);
+        double valueInBaseUnit = valueInBaseUnit() + another.valueInBaseUnit();
+        double valueInCurrentUnit = unit.fromBaseUnit(valueInBaseUnit);
+        return new Weight( valueInCurrentUnit, unit);
     }
 
     @Override
