@@ -1,10 +1,11 @@
 package com.example.quantities;
 
-public enum Unit {
-    GRAM(1), KILOGRAM(1000);
+public class Unit {
+    public static final Unit GRAM = new Unit(1);
+    public static final Unit KILOGRAM = new Unit(1000);
 
-     final int scale;
-    Unit(int scale) {
+    private final int scale;
+    private Unit(int scale) {
         this.scale = scale;
     }
 
