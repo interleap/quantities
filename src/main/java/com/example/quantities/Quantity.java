@@ -2,27 +2,27 @@ package com.example.quantities;
 
 import static java.lang.Math.abs;
 
-public class Weight {
+public class Quantity {
     private final double value;
-    private final WeightUnit unit;
+    private final Unit unit;
 
-    public Weight(double value, WeightUnit unit) {
+    public Quantity(double value, Unit unit) {
         this.value = value;
         this.unit = unit;
     }
 
-    public Weight add(Weight another) {
+    public Quantity add(Quantity another) {
         double valueInBaseUnit = valueInBaseUnit() + another.valueInBaseUnit();
         double valueInCurrentUnit = unit.fromBaseUnit(valueInBaseUnit);
-        return new Weight( valueInCurrentUnit, unit);
+        return new Quantity( valueInCurrentUnit, unit);
     }
 
     @Override
     public boolean equals(Object other) {
         if (this == other) return true;
         if (other == null || getClass() != other.getClass()) return false;
-        Weight weight = (Weight) other;
-        return areValuesEqualToThousandthUnit(valueInBaseUnit(), weight.valueInBaseUnit());
+        Quantity quantity = (Quantity) other;
+        return areValuesEqualToThousandthUnit(valueInBaseUnit(), quantity.valueInBaseUnit());
     }
 
     private double valueInBaseUnit() {
@@ -40,7 +40,7 @@ public class Weight {
 
     @Override
     public String toString() {
-        return "Weight{" +
+        return "Quantity{" +
                 "value=" + value +
                 ", unit=" + unit +
                 '}';

@@ -6,24 +6,24 @@ import static com.example.quantities.WeightUnit.GRAM;
 import static com.example.quantities.WeightUnit.KILOGRAM;
 import static org.junit.Assert.assertEquals;
 
-public class WeightTest {
+public class QuantityTest {
     @Test
     public void shouldAddTwoGramObjects(){
-        assertEquals(new Weight(10, GRAM), new Weight(8, GRAM).add(new Weight(2, GRAM)));
+        assertEquals(new Quantity(10, GRAM), new Quantity(8, GRAM).add(new Quantity(2, GRAM)));
     }
 
     @Test
     public void shouldAddTwoKilogramObjects(){
-        assertEquals(new Weight(6, KILOGRAM), new Weight(3, KILOGRAM).add(new Weight(3, KILOGRAM)));
+        assertEquals(new Quantity(6, KILOGRAM), new Quantity(3, KILOGRAM).add(new Quantity(3, KILOGRAM)));
     }
 
     @Test
     public void shouldCheckIfWeightsOfDifferentTypesAreEqual(){
-        assertEquals(new Weight(5.5, KILOGRAM), new Weight(5500, GRAM));
+        assertEquals(new Quantity(5.5, KILOGRAM), new Quantity(5500, GRAM));
     }
 
     @Test
     public void shouldBeAbleToAddWeightsOfDifferentUnits(){
-        assertEquals(new Weight(4, KILOGRAM), new Weight(3.3, KILOGRAM).add(new Weight(700, GRAM)));
+        assertEquals(new Quantity(4, KILOGRAM), new Quantity(3.3, KILOGRAM).add(new Quantity(700, GRAM)));
     }
 }
