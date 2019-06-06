@@ -4,9 +4,9 @@ import static java.lang.Math.abs;
 
 public class Weight {
     private final double value;
-    private final Unit unit;
+    private final WeightUnit unit;
 
-    public Weight(double value, Unit unit) {
+    public Weight(double value, WeightUnit unit) {
         this.value = value;
         this.unit = unit;
     }

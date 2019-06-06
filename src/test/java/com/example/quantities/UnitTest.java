@@ -2,18 +2,21 @@ package com.example.quantities;
 
 import org.junit.Test;
 
-import static com.example.quantities.Unit.KILOGRAM;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class UnitTest {
 
     @Test
-    public void shouldConvertValueToBaseUnit() {
-        assertEquals(5500, KILOGRAM.toBaseUnit(5.5), .01);
+    public void shouldConvertToBaseUnit() {
+        Unit unit = new Unit(5);
+        assertEquals(10, unit.toBaseUnit(2), .01);
     }
 
     @Test
-    public void fromBaseUnit() {
-        assertEquals(5.5, KILOGRAM.fromBaseUnit(5500), .01);
+    public void shouldConvertFromBaseUnit() {
+        Unit unit = new Unit(5);
+        assertEquals(2, unit.fromBaseUnit(10), .01);
     }
+
+
 }

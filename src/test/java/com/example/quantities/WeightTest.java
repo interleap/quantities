@@ -2,8 +2,8 @@ package com.example.quantities;
 
 import org.junit.Test;
 
-import static com.example.quantities.Unit.GRAM;
-import static com.example.quantities.Unit.KILOGRAM;
+import static com.example.quantities.WeightUnit.GRAM;
+import static com.example.quantities.WeightUnit.KILOGRAM;
 import static org.junit.Assert.assertEquals;
 
 public class WeightTest {

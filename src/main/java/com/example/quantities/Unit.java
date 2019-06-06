@@ -1,11 +1,9 @@
 package com.example.quantities;
 
 public class Unit {
-    public static final Unit GRAM = new Unit(1);
-    public static final Unit KILOGRAM = new Unit(1000);
+    protected final int scale;
 
-    private final int scale;
-    private Unit(int scale) {
+    public Unit(int scale) {
         this.scale = scale;
     }
 
